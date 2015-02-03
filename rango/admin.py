@@ -10,3 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Page, PageAdmin)
 
+from rango.models import UserProfile
+
+admin.site.register(UserProfile)
+
