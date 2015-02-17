@@ -152,6 +152,12 @@ def add_page(request, category_name_slug):
 
 from rango.forms import UserForm, UserProfileForm
 
+@login_required
+def restricted(request):
+   # return HttpResponse("Since you are logged in, you can see this text!")
+    return render(request, 'rango/restricted.html')
+
+"""
 def register(request):
 
     # A boolean value for telling the template whether the registration was successful.
@@ -209,6 +215,7 @@ def register(request):
             'rango/register.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
 
+
 def user_login(request):
 
     # If the request is a HTTP POST, try to pull out the relevant information.
@@ -247,12 +254,6 @@ def user_login(request):
         # blank dictionary object...
         return render(request, 'rango/login.html', {})
 
-# Restricted views
-@login_required
-def restricted(request):
-   # return HttpResponse("Since you are logged in, you can see this text!")
-    return render(request, 'rango/restricted.html')
-
 # Use the login_required() decorator to ensure only those logged in can access the view.
 @login_required
 def user_logout(request):
@@ -261,3 +262,5 @@ def user_logout(request):
 
     # Take the user back to the homepage.
     return HttpResponseRedirect('/rango/')
+"""
+    # Restricted views
