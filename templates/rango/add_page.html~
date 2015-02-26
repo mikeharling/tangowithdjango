@@ -5,9 +5,11 @@
 {% block title %}Rango{% endblock %}
 
 {% block body_block %}
+	<div class="page-header">
         <h1>Add a page to {{ category.name }}.</h1>
-
-        <form id="category_form" method="post" action="/rango/category/{{ category.slug }}/add_page/">
+	</div>
+	<div>
+        <form id="category_form" method="post" action="{% url 'add_page' category.slug %}">
 
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
@@ -22,4 +24,5 @@
 
             <input type="submit" name="submit" value="Add Page" />
         </form>
+	</div>
 {% endblock %}

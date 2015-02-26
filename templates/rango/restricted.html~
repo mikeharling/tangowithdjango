@@ -5,9 +5,7 @@
 {% block title %}Restricted{% endblock %}
 
 {% block body_block %}
-            {% if user.is_authenticated %}
-		Since you are logged in, you can see this text!
-            {% else %}
-		You need to be logged in to see this page.
-            {% endif %}
+
+		<h2>Since you are logged in, you can see this text!</h2>
+
 {% endblock %}
