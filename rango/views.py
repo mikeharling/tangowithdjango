@@ -14,6 +14,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 # Date and time
 from datetime import datetime
+# Bing Search
+from rango.bing_search import run_query
 
 def index(request):
     # Query the database for a list of ALL categories currently stored.
@@ -156,6 +158,19 @@ from rango.forms import UserForm, UserProfileForm
 def restricted(request):
    # return HttpResponse("Since you are logged in, you can see this text!")
     return render(request, 'rango/restricted.html')
+
+def search(request):
+
+    result_list = []
+
+    if request.method == 'POST':
+        query = request.POST['query'].strip()
+
+        if query:
+            # Run our Bing function to get the results list!
+            result_list = run_query(query)
+
+    return render(request, 'rango/search.html', {'result_list': result_list})
 
 """
 def register(request):
