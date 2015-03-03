@@ -1,0 +1,15 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Users{% endblock %}
+
+{% block body_block %}
+	<div class="hero-unit">
+		<div class="page-header">
+			<h1> All User Profiles </h1>
+		</div>
+        {% for user in users %}
+		    <li class="list-group-item"><a href="{% url 'profile' user.username %}"/>{{ user.username }}</li>
+	    {% endfor %}
+	</div>
+
+{% endblock %}

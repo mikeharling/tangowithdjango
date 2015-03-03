@@ -58,3 +58,9 @@ keys.py
 
 # All temp files
 *~
+db.sqlite3
+manage.py
+populate_rango.py
+media/
+static/
+.metadata/

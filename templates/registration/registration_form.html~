@@ -7,7 +7,7 @@
 
 <div class="form-group" >
  <p class="required"> <label for="id_username">Username:</label>
-     <input class="form-control"  id="id_username" maxlength="10" name="username" type="text"  placeholder="Enter username"/></p>
+     <input class="form-control"  id="id_username" maxlength="30" name="username" type="text"  placeholder="Enter username"/></p>
 </div>
  <div class="form-group">
     <p class="required"><label for="id_email">E-mail:</label>

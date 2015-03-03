@@ -1,0 +1,27 @@
+{% extends "rango/base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body_block %}
+	<div class="hero-unit">
+		<div class="page-header">
+			<h1> {{ returneduser.username }}'s Profile </h1>
+		</div>
+
+		<p>Email: {{ returneduser.email }}</p>
+		{% if userprofile %}
+			<p>Website: <a href="{{ userprofile.website }}">{{userprofile.website}}</a></p>
+			<br/>
+			{% if userprofile.picture %}
+				<img src="{{ userprofile.picture.url }}" border="5"/><br/><br/>
+			{% endif %}
+			{% if user.is_authenticated and returneduser.username == user.username %}
+				<h3>
+				<a href="{% url 'auth_password_change' %}">Change Password</a>
+				<br/>
+				Visits to this website: {{ visits }}
+				</h3>
+			{% endif %}
+		{% endif %}
+		</div>
+{% endblock %}

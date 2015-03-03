@@ -15,7 +15,11 @@
 
          <div class="row placeholders">
             <div class="col-xs-12 col-sm-6 placeholder">
-               <h4>Categories</h4>
+                   <div class="panel panel-primary">
+    <div class="panel-heading">
+            <h3 class="panel-title">Categories</h3>
+    </div>
+</div>
 
               {% if categories %}
                     <ul class="list-group">
@@ -29,7 +33,11 @@
 
             </div>
             <div class="col-xs-12 col-sm-6 placeholder">
-              <h4>Pages</h4>
+               <div class="panel panel-primary">
+            <div class="panel-heading">
+                    <h3 class="panel-title">Pages</h3>
+            </div>
+    </div>
 
                 {% if pages %}
                     <ul class="list-group">
