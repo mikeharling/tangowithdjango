@@ -230,7 +230,7 @@ def profile(request, username):
         userProfile = None
         
     visits = request.session.get('visits')
-    context_dict['returneduser': returnedUser, 'userprofile': userProfile, 'visits': visits]
+    context_dict = {'returneduser': returnedUser, 'userprofile': userProfile, 'visits': visits}
     return render(request, 'rango/profile.html', context_dict)
 
 def users(request):
