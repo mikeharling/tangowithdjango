@@ -54,13 +54,12 @@ docs/_build/
 target/
 
 # My API Key
-keys.py
+keys_copy.py
 
 # All temp files
 *~
 db.sqlite3
 manage.py
-populate_rango.py
-media/
-static/
 .metadata/
+loginOLD.html
+registerOLD.html
