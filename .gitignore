@@ -63,3 +63,4 @@ manage.py
 .metadata/
 loginOLD.html
 registerOLD.html
+rango/migrations/

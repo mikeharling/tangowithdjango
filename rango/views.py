@@ -1,6 +1,6 @@
 #from django.http import HttpResponse
 from django.shortcuts import render
-# Import the Category model
+# Import needed models
 from rango.models import Category
 from rango.models import Page
 from rango.models import User
@@ -19,7 +19,10 @@ from datetime import datetime
 # Bing Search
 from rango.bing_search import run_query
 from django.template import RequestContext
+# Redirect shortcut
 from django.shortcuts import redirect
+# Add Page Form
+from rango.forms import PageForm
 
 def index(request):
     # Query the database for a list of ALL categories currently stored.
@@ -124,7 +127,7 @@ def add_category(request):
             # Now call the index() view
             return index(request)
         else:
-            # the supplied form contained cerrors - just print them to the terminal
+            # the supplied form contained errors - just print them to the terminal
             print form.errors
     else:
         # If the request was not a POST, display the form to enter details
@@ -133,9 +136,6 @@ def add_category(request):
     # Bad form (or form details), no form supplied...
     # Render the form with the error message (if any).
     return render(request, 'rango/add_category.html', {'form': form})
-
-# Add Page Form
-from rango.forms import PageForm
 
 @login_required
 def add_page(request, category_name_slug):
@@ -168,7 +168,6 @@ from rango.forms import UserForm, UserProfileForm
 
 @login_required
 def restricted(request):
-   # return HttpResponse("Since you are logged in, you can see this text!")
     return render(request, 'rango/restricted.html')
 
 def search(request):

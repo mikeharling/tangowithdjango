@@ -13,12 +13,4 @@ urlpatterns = patterns('',
                         url(r'^add_profile/$', views.register_profile, name='register_profile'),
                         url(r'^profile/(?P<username>[\w\-]+)/$', views.profile, name='profile'),
                         url(r'^users/$', views.users, name='users'),
-                        #url(r'^goto/(?P<page_id>\d+)/$', views.track_url, name='goto'),
-
-
-                        #No longer needed as of Chapter 12
-                        #url(r'^register/$', views.register, name='register'),
-                        #url(r'^login/$', views.user_login, name='login'),
-                        #url(r'^logout/$', views.user_logout, name='logout'),
-
 )
